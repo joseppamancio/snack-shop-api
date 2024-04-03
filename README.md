@@ -1,3 +1,5 @@
+[Português](README.pt.md) | [Español](README.es.md)
+
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 [![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
 [![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
@@ -8,445 +10,433 @@
 
 # Snack Shop API
 
+## 📝 Description
 
-## 📝 Descrição
+The Snack Shop API is a management system for snack bars that offers a series of advantages. It allows for efficient and intuitive ordering, improving the customer experience and optimizing employee time.
 
-O Snack Shop API é um sistema de gerenciamento para lanchonetes que oferece uma série de vantagens. Ele permite a realização de pedidos de forma eficiente e intuitiva, melhorando a experiência do cliente e otimizando o tempo dos funcionários.
+The "Snack Shop API" application is a management system for snack bars. It is designed to improve operational efficiency and provide a superior experience to customers. Here are the main business requirements that the application meets:
 
-A aplicação "Snack Shop API" é um sistema de gerenciamento para lanchonetes. Ela foi projetada para melhorar a eficiência operacional e proporcionar uma experiência superior aos clientes. Aqui estão os principais requisitos de negócios que a aplicação atende:  
+1. Order Management: The application allows for efficient and intuitive ordering. Users can list all orders, list an order by ID, add an order, and update the status of an order.
 
-1. Gestão de Pedidos: A aplicação permite a realização de pedidos de forma eficiente e intuitiva. Os usuários podem listar todos os pedidos, listar um pedido por ID, adicionar um pedido e atualizar o status de um pedido.  
+2. User Management: The application allows for user management. Users can be listed, added, updated, and removed. Additionally, users can be added to groups and have their passwords changed.
 
-2. Gestão de Usuários: A aplicação permite o gerenciamento de usuários. Os usuários podem ser listados, adicionados, atualizados e removidos. Além disso, os usuários podem ser adicionados a grupos e ter suas senhas alteradas.  
+3. Group Management: The application allows for the management of user groups. Groups can be listed, added, updated, and removed. Additionally, permissions can be listed, added, and removed from a group.
 
-3. Gestão de Grupos: A aplicação permite o gerenciamento de grupos de usuários. Os grupos podem ser listados, adicionados, atualizados e removidos. Além disso, as permissões podem ser listadas, adicionadas e removidas de um grupo.  
+4. Product Management: The application allows for product management. Products can be listed, added, updated, and removed.
 
-4. Gestão de Produtos: A aplicação permite o gerenciamento de produtos. Os produtos podem ser listados, adicionados, atualizados e removidos.  
+5. Ingredient Management: The application allows for ingredient management. Ingredients can be listed, added, updated, and removed.
 
-5. Gestão de Ingredientes: A aplicação permite o gerenciamento de ingredientes. Os ingredientes podem ser listados, adicionados, atualizados e removidos.  
+6. Payment Method Management: The application allows for payment method management. Payment methods can be listed, added, updated, and removed.
 
-6. Gestão de Métodos de Pagamento: A aplicação permite o gerenciamento de métodos de pagamento. Os métodos de pagamento podem ser listados, adicionados, atualizados e removidos.  
+7. Snack Bar Management: The application allows for snack bar management. Snack bars can be listed, added, updated, and activated/deactivated. Additionally, the products, payment methods, and administrators of a snack bar can be managed.
 
-7. Gestão de Lanchonetes (Snack Bars): A aplicação permite o gerenciamento de lanchonetes. As lanchonetes podem ser listadas, adicionadas, atualizadas e ativadas/desativadas. Além disso, os produtos, formas de pagamento e administradores de uma lanchonete podem ser gerenciados.
+In summary, the Snack Shop API is a comprehensive solution for snack bars looking to improve their operational efficiency and provide a superior experience to their customers.
 
-Em resumo, a Snack Shop API é uma solução completa para lanchonetes que buscam melhorar sua eficiência operacional e proporcionar uma experiência superior aos seus clientes.
+## 📄 Business Diagrams
+- [Processes](https://miro.com/app/board/uXjVNzyqNFE=/)
+- Object Diagram
+  ![Diagram](src/main/resources/documentation/images/snack-shop-delivery.drawio.png)
 
-## 📄 Diagramas de negócio
-- [Processos](https://miro.com/app/board/uXjVNzyqNFE=/)
-- Diagrama de Objetos
-  ![Diagrama](src/main/resources/documentation/images/snack-shop-delivery.drawio.png)
+## 💻 Technologies
 
-## 💻 Tecnologias
-
-As seguintes ferramentas foram usadas na construção do projeto:
+The following tools were used in the project:
 
 - [Java](https://www.java.com)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Maven](https://maven.apache.org/)
 - [SQL](https://www.mysql.com/)
-## ✅ Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+## ✅ Prerequisites
+
+Before you begin, you will need to have the following tools installed on your machine:
 - [Docker](https://www.docker.com/products/docker-desktop)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Arquitetura
-![Arquitetura_local](src/main/resources/documentation/images/arquitetura-local.png)
+## Architecture
+![Local Architecture](src/main/resources/documentation/images/arquitetura-local.png)
 
-## 🚀 Como executar o projeto
+## 🚀 How to run the project
 
-### ⚙️ Rodando o Backend (servidor)
+### ⚙️ Running the Backend (server)
 
 ```bash
-# Clone este repositório
+# Clone this repository
 $ git clone https://github.com/proinsighttech/snack-shop-delivery.git
 
-# Acesse a pasta do projeto no terminal/cmd
+# Access the project folder in the terminal/cmd
 $ cd snack-shop-delivery
 
-# Use o Docker Compose para subir a aplicação e o banco de dados
+# Use Docker Compose to start the application and the database
 $ docker-compose up
 ```
 
-Ao executar o comando docker-compose up, o Docker Compose inicia a aplicação e o banco de dados em contêineres separados, mas na mesma rede Docker. Isso permite que a aplicação e o banco de dados se comuniquem entre si.  O banco de dados é iniciado na porta padrão 3306. 
+When you run the docker-compose up command, Docker Compose starts the application and the database in separate containers, but on the same Docker network. This allows the application and the database to communicate with each other. The database is started on the default port 3306.
 
-A aplicação Spring Boot, por sua vez, se conecta a este banco de dados através da rede Docker.  Quando a aplicação Spring Boot é iniciada, o Flyway é executado. O Flyway é uma ferramenta de migração de banco de dados que ajuda a gerenciar e aplicar mudanças no esquema do banco de dados. Ele cria as tabelas necessárias para a interação com a aplicação, como as tabelas de pedidos, usuários, produtos e ingredientes.  
+The Spring Boot application, in turn, connects to this database through the Docker network. When the Spring Boot application starts, Flyway is executed. Flyway is a database migration tool that helps manage and apply changes to the database schema. It creates the necessary tables for interacting with the application, such as orders, users, products, and ingredients.
 
-Após a criação das tabelas, um script chamado afterMigrate.sql é executado. Este script preenche as tabelas com dados fictícios, permitindo que você teste a aplicação.  Finalmente, a aplicação é exposta na porta 9000. Você pode interagir com a aplicação através de um cliente HTTP como o Postman, chamando os respectivos endpoints da API.
+After creating the tables, a script called afterMigrate.sql is executed. This script populates the tables with fictitious data, allowing you to test the application. Finally, the application is exposed on port 9000. You can interact with the application through an HTTP client like Postman, calling the respective API endpoints.
 
+## 📝 API Documentation
 
-## 📝 Documentação da API
+To test the application, we provide a Postman collection containing several pre-configured requests. This collection is located in the src/main/resources/collections directory of the project. To import the collection into Postman, follow the steps below:
 
-Para testar a aplicação, fornecemos uma coleção do Postman que contém várias solicitações pré-configuradas. Esta coleção está localizada no diretório src/main/resources/collections do projeto.  Para importar a coleção no Postman, siga os passos abaixo:  
+1. Open Postman.
+2. Click on the "Import" button in the top left corner.
+3. In the window that opens, select the "File" option.
+4. Navigate to the src/main/resources/collections directory of the project and select the collection file.
+5. Click "Open" to import the collection.
 
-1. Abra o Postman.
-2. Clique no botão "Import" no canto superior esquerdo.
-3. Na janela que se abre, selecione a opção "File".
-4. Navegue até o diretório src/main/resources/collections do projeto e selecione o arquivo da coleção.
-5. Clique em "Open" para importar a coleção.
+After importing the collection, you will see a list of requests in the left panel of Postman. You can click on any of these requests to open it and then click the "Send" button to send the request to the application. Remember that the application must be running on port 9000 for you to interact with it through Postman.
 
-Após importar a coleção, você verá uma lista de solicitações no painel esquerdo do Postman. Você pode clicar em qualquer uma dessas solicitações para abri-la e, em seguida, clicar no botão "Send" para enviar a solicitação para a aplicação.  Lembre-se de que a aplicação deve estar rodando na porta 9000 para que você possa interagir com ela através do Postman.
+### 👥 Groups
 
-### 👥 Grupos
+To list the groups registered in the application, we defined a folder within the Collection called Groups. In it, you will find the following requests:
 
-Para listar os grupos cadastrados na aplicação definimos uma pasta dentro da Collection chamada de Groups, nela você encontrará as seguintes requisições:
+- List all groups
+- List group by ID
+- Add Group
+- Update Group
+- Remove Group
+- List Group Permissions
+- Add Permission to Group
+- Remove Permission from Group
 
-- Listar todos os grupos
-- Listar grupo por ID
-- Adicionar Grupo
-- Atualizar Grupo
-- Remover Grupo
-- Listar Permissões do Grupo
-- Adicionar Permissão ao Grupo
-- Remover Permissão do Grupo
+### Request Example
+- Finding Group by ID
+  ![Group by ID](src/main/resources/documentation/images/group-by-id.png)
 
+### 👤 Users
 
-### Exemplo de Requisição
-- Buscando Grupo por ID
-![Group by ID](src/main/resources/documentation/images/group-by-id.png)
+To list the users registered in the application, we defined a folder within the Collection called Users. In it, you will find the following requests:
 
-### 👤 Usuários
+- List all users
+- List user by ID
+- List User Group
+- Add User to Group
+- Remove User from Group
+- Add User
+- Update User
+- Remove User
+- Change User Password
 
-Para listar os usuários cadastrados na aplicação definimos uma pasta dentro da Collection chamada de Users, nela você encontrará as seguintes requisições:
-
-- Listar todos os usuários
-- Listar usuário por ID
-- Listar Grupo de Usuários
-- Adicionar Usuário ao Grupo
-- Remover Usuário do Grupo
-- Adicionar Usuário
-- Atualizar Usuário
-- Remover Usuário
-- Alterar Senha do Usuário
-
-### Exemplo de Requisição
-- Adicionando Usuário
-![User by ID](src/main/resources/documentation/images/add-user.png)
+### Request Example
+- Adding User
+  ![User by ID](src/main/resources/documentation/images/add-user.png)
 
 
-### 🛒 Pedidos
+### 🛒 Orders
 
-Para listar os pedidos cadastrados na aplicação definimos uma pasta dentro da Collection chamada de Orders, nela você encontrará as seguintes requisições:
+To list the orders registered in the application, we defined a folder within the Collection called Orders. In it, you will find the following requests:
 
-- Listar todos os pedidos
-- Listar pedido por ID
-- Adicionar Pedido
-- Atualizar Status do Pedidos
+- List all orders
+- List order by ID
+- Add Order
+- Update Order Status
 
-### Exemplo de Requisição
-- Listando Pedidos
-Ao listar os pedidos podemos filtar por status, intervalo de data de criação e usuário.
-![Orders](src/main/resources/documentation/images/list-orders.png)
-
-
-### 💳 Métodos de Pagamento
-
-Para listar os metodos de pagamento cadastrados na aplicação definimos uma pasta dentro da Collection chamada de Payment Methods, nela você encontrará as seguintes requisições:
-
-- Listar todos os metodos de pagamento
-- Listar metodo de pagamento por ID
-- Adicionar Metodo de Pagamento
-- Atualizar Metodo de Pagamento
-- Remover Metodo de Pagamento
-
-### Exemplo de Requisição
-- Listando Metodos de Pagamento
-![Payment Methods](src/main/resources/documentation/images/list-payment-methods.png)
-
-### 🍔 Lanchonetes
-
-Para listar as lanchonetes cadastradas na aplicação definimos uma pasta dentro da Collection chamada de Snack Bars, nela você encontrará as seguintes requisições:
-
-- Listar todas as lanchonetes
-- Listar lanchonete por ID
-- Adicionar Lanchonete
-- Atualizar Lanchonete
-- Ativar/Desativar Lanchonete
-- Lista de Produtos da Lanchonete
-- Lista Formas de Pagamento da Lanchonete
-- Adicionar Forma de Pagamento a Lanchonete
-- Remover Forma de Pagamento da Lanchonete
-- Lista Administradores da Lanchonete
-- Adicionar Administrador a Lanchonete
-- Remover Administrador da Lanchonete
-
-### Exemplo de Requisição
-- Listando Lanchonetes
-![Snack Bars](src/main/resources/documentation/images/find-snack-shop-by-id.png)
+### Request Example
+- Listing Orders
+  When listing orders, we can filter by status, creation date range, and user.
+  ![Orders](src/main/resources/documentation/images/list-orders.png)
 
 
-### 📦 Produtos
+### 💳 Payment Methods
 
-Para listar os produtos cadastrados na aplicação definimos uma pasta dentro da Collection chamada de Products, nela você encontrará as seguintes requisições:
+To list the payment methods registered in the application, we defined a folder within the Collection called Payment Methods. In it, you will find the following requests:
 
-- Listar todos os produtos
-- Listar produto por ID
-- Adicionar Produto
-- Atualizar Produto
-- Remover Produto
+- List all payment methods
+- List payment method by ID
+- Add Payment Method
+- Update Payment Method
+- Remove Payment Method
 
-### Exemplo de Requisição
-- Adicionando Produto
-![Products](src/main/resources/documentation/images/add-product.png)
+### Request Example
+- Listing Payment Methods
+  ![Payment Methods](src/main/resources/documentation/images/list-payment-methods.png)
+
+### 🍔 Snack Bars
+
+To list the snack bars registered in the application, we defined a folder within the Collection called Snack Bars. In it, you will find the following requests:
+
+- List all snack bars
+- List snack bar by ID
+- Add Snack Bar
+- Update Snack Bar
+- Activate/Deactivate Snack Bar
+- Snack Bar Product List
+- Snack Bar Payment Methods List
+- Add Payment Method to Snack Bar
+- Remove Payment Method from Snack Bar
+- Snack Bar Administrators List
+- Add Administrator to Snack Bar
+- Remove Administrator from Snack Bar
+
+### Request Example
+- Listing Snack Bars
+  ![Snack Bars](src/main/resources/documentation/images/find-snack-shop-by-id.png)
 
 
+### 📦 Products
 
-### 🥕 Ingredientes
+To list the products registered in the application, we defined a folder within the Collection called Products. In it, you will find the following requests:
 
-Para listar os ingredientes cadastrados na aplicação definimos uma pasta dentro da Collection chamada de Ingredients, nela você encontrará as seguintes requisições:
+- List all products
+- List product by ID
+- Add Product
+- Update Product
+- Remove Product
 
-- Listar todos os ingredientes
-- Listar ingrediente por ID
-- Adicionar Ingrediente
-- Atualizar Ingrediente
-- Remover Ingrediente
-- Lista Ingredientes em Estoque
+### Request Example
+- Adding Product
+  ![Products](src/main/resources/documentation/images/add-product.png)
 
 
-### Exemplo de Requisição
-- Listando Ingrediente em Estoque
-![Ingredients](src/main/resources/documentation/images/find-ingredient-by-id.png)
+### 🥕 Ingredients
+
+To list the ingredients registered in the application, we defined a folder within the Collection called Ingredients. In it, you will find the following requests:
+
+- List all ingredients
+- List ingredient by ID
+- Add Ingredient
+- Update Ingredient
+- Remove Ingredient
+- List Ingredients in Stock
+
+
+### Request Example
+- Listing Ingredients in Stock
+  ![Ingredients](src/main/resources/documentation/images/find-ingredient-by-id.png)
 
 ---------------------------------------
 
-# Implementando Microsserviços em Kubernetes Local com Minkube
+# Implementing Microservices in Local Kubernetes with Minikube
 
-### Pré-Requisitos
-* Docker (Instalação: https://www.docker.com/get-started/)
-* Chocolatey (Instalação: https://chocolatey.org/install)
-* Minikube (Instalação: https://minikube.sigs.k8s.io/docs/start/)
-* Istio (Instalação: https://istio.io/latest/docs/setup/getting-started/)
+### Prerequisites
+* Docker (Installation: https://www.docker.com/products/docker-desktop)
+* Chocolatey (Installation: https://chocolatey.org/install)
+* Minikube (Installation: https://minikube.sigs.k8s.io/docs/start/)
+* Istio (Installation: https://istio.io/latest/docs/setup/getting-started/)
 
 
-### Arquitetura com Kubernetes Local
-![Arquitetura_local](src/main/resources/documentation/images/arquitetura-kubernetes.png)
+### Local Kubernetes Architecture
+![Local Architecture](src/main/resources/documentation/images/arquitetura-kubernetes.png)
 
-### Instalando Minikube
+### Installing Minikube
 
-Você precisa ter o Minikube instalado para criar um cluster Kubernetes localmente. Consulte a documentação oficial do Minikube para obter instruções de instalação.
-Podemos instalar o Minikube usando o Chocolatey:
+You need to have Minikube installed to create a local Kubernetes cluster. Refer to the official Minikube documentation for installation instructions.
+We can install Minikube using Chocolatey:
 
     choco install minikube
 
-###  Acessando o Projeto
-Navegue até o diretório do projeto:
+### Accessing the Project
+Navigate to the project directory:
 
     cd snack-shop-delivery-internal
 
-## Executando Minikube
-### Inicie o Minikube:
+## Running Minikube
+### Start Minikube:
 
     minikube start
 
 ![Minikube](src/main/resources/documentation/images/01-minikube-start.png)
 
-## Deploy do Cluster
- A seguir, vamos implantar a aplicação no cluster Kubernetes local usando o Minikube.
+## Cluster Deployment
+Next, we'll deploy the application on the local Kubernetes cluster using Minikube.
 
-# Configurar o ambiente Docker para usar o Minikube
-Entrando dentro do terminal do Minikube:
+# Set up Docker environment to use Minikube
+Enter the Minikube terminal:
+
 ### UNIX
     eval $(minikube -p minikube docker-env)
 ### WINDOWS
     minikube -p minikube docker-env | Invoke-Expression
 
-### Verificar as imagens Docker
-Verifique se as imagens Docker estão disponíveis para o Minikube:
+### Check Docker images
+Check if Docker images are available for Minikube:
 
     docker images
 
-### Build da aplicação
-Faça o build da aplicação usando o Docker Compose:
+### Build the application
+Build the application using Docker Compose:
 
     docker-compose build
 
 ![Docker](src/main/resources/documentation/images/02-configurando-minikube-docker.png)
 
-### Verificar o kubectl
+### Check kubectl
     minikube kubectl -- version
 
-### Preparando os arquivos da aplicação
-Aplicando os arquivos de deployment e service da aplicação:
+### Prepare application files
+Applying the application's deployment and service files:
 
     minikube kubectl -- apply -f ./k8s/00-snack-shop-mysql.yml
 
-### Verifique se o servico do mySQL está em execução antes de subir a aplicação
+### Check if the MySQL service is running before deploying the application
     minikube kubectl -- get pods
 
-![Arquivos](src/main/resources/documentation/images/05a-aplicando-arquivos.png)
+![Files](src/main/resources/documentation/images/05a-aplicando-arquivos.png)
 
 
-### Aplicando os arquivos da aplicação
-Com o MySQL em execução, aplique os arquivos da aplicação:
+### Applying the application files
+With MySQL running, apply the application files:
 
     minikube kubectl -- apply -f ./k8s/01-snack-shop-api-local.yml
-    
-
-![Arquivos](src/main/resources/documentation/images/05-aplicando-arquivos.png)
 
 
-### Verificar os pods
-Verifique se os pods estão em execução:
-
-    minikube kubectl -- get pods
-
-![Pods](src/main/resources/documentation/images/06-pods.png)
+![Files](src/main/resources/documentation/images/05-aplicando-arquivos.png)
 
 
-### Ativar o serviço de Load Balance
-Abra um novo terminal e execute o comando abaixo para ativar o serviço de Load Balance e expor o IP da aplicação:
+### Enable Load Balance service
+Open a new terminal and run the following command to enable the Load Balance service and expose the application's IP:
 
     minikube tunnel
 
-![Tunel](src/main/resources/documentation/images/07-tunel.png)
+![Tunnel](src/main/resources/documentation/images/07-tunel.png)
 
-### Verificar os serviços em execução
-Após a ativação do serviço de Load Balance, verifique os serviços em execução:
+### Check running services
+After enabling the Load Balance service, check the running services:
 
     minikube kubectl -- get services
 
-![Servicos](src/main/resources/documentation/images/08-servicos.png)
+![Services](src/main/resources/documentation/images/08-servicos.png)
 
-### Testar no Postman
-Após a implantação, teste os serviços usando o Postman com o IP fornecido pelo comando ' minikube kubectl -- get services' na porta 9000.
+### Test in Postman
+After deployment, test the services using Postman with the IP provided by the 'minikube kubectl -- get services' command on port 9000.
 
-![Postan](src/main/resources/documentation/images/11-postman.png)
+![Postman](src/main/resources/documentation/images/11-postman.png)
 
-### Instalar Istio
-Você pode instalar o Istio como um Service Mesh ou Sidecar Proxy. Consulte a documentação oficial do Istio para obter mais informações.
-Prodemos instalar o Istio usando o Chocolatey:
+### Installing Istio
+You can install Istio as a Service Mesh or Sidecar Proxy. Refer to the official Istio documentation for more information.
+We can install Istio using Chocolatey:
 
     choco install istioctl
 
-### Configurar Istio
-Após a instalação, configure o Istio:
+### Configure Istio
+After installation, configure Istio:
 
     istioctl install
 
 ![Istio](src/main/resources/documentation/images/09-istio.png)
 
-### Habilitando o Istio para o namespace padrão
+### Enable Istio for the default namespace
     kubectl label namespace default istio-injection=enabled
 
-### Aplicando Arquivos do API Gateway
-Aplique os arquivos do API Gateway:
+### Applying API Gateway Files
+Apply the API Gateway files:
 
     minikube kubectl -- apply -f ./k8s/istio/gateway.yml
 
-![GAteway](src/main/resources/documentation/images/10-gateway-istio.png)
+![Gateway](src/main/resources/documentation/images/10-gateway-istio.png)
 
-### Verificar o serviço
+### Verify the service
     minikube kubectl -- -n istio-system get services
 
-## Configurando AutoScalling
-Para configurar o AutoScaling, siga as etapas abaixo:
+## Configuring AutoScaling
+To configure AutoScaling, follow the steps below:
 
-### Habilitar métricas
+### Enable metrics
     minikube addons enable metrics-server
 
-### Aplicar o serviço
+### Apply the service
     minikube kubectl -- apply -f ./k8s/02-hpa.yml
 
-### Verificar o AutoScaling
+### Verify AutoScaling
     minikube kubectl -- get hpa
 
-Este Readme fornece instruções detalhadas para implantar e testar microsserviços usando Kubernetes.
-Certifique-se de seguir cada passo cuidadosamente para uma implementação bem-sucedida.
+This README provides detailed instructions for deploying and testing microservices in local Kubernetes environments and on AWS cloud using Terraform. Make sure to follow the instructions carefully for a successful deployment.
 
 ---------------------------------------
 
-# Implementando Microsserviços em Cloud AWS com EKS e Terraform
+# Implementing Microservices on AWS Cloud with EKS and Terraform
 
-### Pré-Requisitos
-* Docker (Instalação: https://www.docker.com/get-started/)
-* Chocolatey (Instalação: https://chocolatey.org/install)
-* Terraform (Instalação: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
-
-
-### Arquitetura com Kubernetes Local
-![Arquitetura_local](src/main/resources/documentation/images/arquitetura-cloud.png)
+### Prerequisites
+* Docker (Installation: https://www.docker.com/get-started/)
+* Chocolatey (Installation: https://chocolatey.org/install)
+* Terraform (Installation: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
 
-### Instalando Terraform
-Podemos instalar o Terraform usando o Chocolatey:
-    choco install terraform
+### Architecture with Local Kubernetes
+![Local_Architecture](src/main/resources/documentation/images/cloud-architecture.png)
 
-###  Acessando os arquivos do Terraform
-Navegue até o diretório do projeto:
+
+### Installing Terraform
+You can install Terraform using Chocolatey:
+choco install terraform
+
+### Accessing Terraform files
+Navigate to the project directory:
 
     cd snack-shop-delivery-internal/terraform
 
-### Crianção do Cluster EKS e Ambiente AWS
+### Creating EKS Cluster and AWS Environment
     terraform apply --auto-approve
 
-### Conectar com Cluster
+### Connecting to Cluster
     aws eks --region us-west-2 update-kubeconfig --name snackshop-cluster
 
-### Criar Imagem Docker
+### Creating Docker Image
     docker-compose build
 
-### Verificar as imagens Docker
+### Verifying Docker images
     docker images
 
-### Subir imagem no ECR usando comando da AWS
+### Pushing image to ECR using AWS command
     aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin ************.dkr.ecr.us-west-2.amazonaws.com
     docker build -t snack-shop-delivery-internal-snack-shop-api .    
     docker tag snack-shop-delivery-internal-snack-shop-api:latest ************.dkr.ecr.us-west-2.amazonaws.com/snack-shop-delivery-internal-snack-shop-api:latest
     docker push ************.dkr.ecr.us-west-2.amazonaws.com/snack-shop-delivery-internal-snack-shop-api:latest
 
-### Verificar o kubectl
+### Verifying kubectl
     kubectl version
 
-### Verificar nós criados
+### Verifying created nodes
     kubectl get nodes
 
-![Noes](src/main/resources/documentation/images/12-nodes-aws.png)
+![Nodes](src/main/resources/documentation/images/12-nodes-aws.png)
 
-### Preparando os arquivos da aplicação
-Aplicando os arquivos de deployment e service da aplicação:
+### Preparing application files
+Applying application deployment and service files:
 
     kubectl apply -f ..\k8s\00-snack-shop-mysql.yml
 
-### Verifique se o servico do mySQL está em execução antes de subir a aplicação
+### Check if MySQL service is running before deploying the application
     kubectl get pods
 
-![Arquivos](src/main/resources/documentation/images/05a-aplicando-arquivos.png)
+![Files](src/main/resources/documentation/images/05a-applying-files.png)
 
-
-### Aplicando os arquivos da aplicação
-Com o MySQL em execução, aplique os arquivos da aplicação:
+### Applying application files
+With MySQL running, apply application files:
 
     kubectl apply -f ..\k8s\01-snack-shop-api.yml
 
 
-![Arquivos](src/main/resources/documentation/images/05-aplicando-arquivos.png)
+![Files](src/main/resources/documentation/images/05-applying-files.png)
 
-### Aplique os arquivos do API Gateway
-    
+### Applying API Gateway files
+
     kubectl apply -f ..\k8s\02-hpa.yml
 
-### Verificar status da implementação
+### Verifying deployment status
     kubectl get deployments
 
-### Verificar pods em execução
+### Verifying running pods
     kubectl get pods
 
-### Verificando Services
+### Checking Services
     kubectl get services
 
-![Services_AWS](src/main/resources/documentation/images/13-services-aws.png)
+![AWS Services](src/main/resources/documentation/images/13-services-aws.png)
 
 
-### Verificando Logs
+### Checking Logs
     kubectl logs -f <pod-name> --tail
 
-### Testar no Postman
-Após a implantação, teste os serviços usando o Postman com o DNS da AWS fornecido pelo comando 'kubectl get services' na porta 9000.
+### Testing in Postman
+After deployment, test the services using Postman with the AWS DNS provided by 'kubectl get services' command on port 9000.
 
-![Postman_AWS](src/main/resources/documentation/images/14-postman-aws.png)
+![AWS Postman](src/main/resources/documentation/images/14-postman-aws.png)
 
 
-# Executando a aplicação na AWS com EKS
-Este é um exemplo de como executar a aplicação na AWS usando o EKS.  Para executar a aplicação na AWS, siga as etapas abaixo:
+# Running the Application on AWS with EKS
+This is an example of running the application on AWS using EKS. To run the application on AWS, follow the steps below:
 
-![Running](src/main/resources/documentation/video/executando-aplicacao.gif)
+![Running](src/main/resources/documentation/video/running-application.gif)
