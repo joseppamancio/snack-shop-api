@@ -439,4 +439,4 @@ After deployment, test the services using Postman with the AWS DNS provided by '
 # Running the Application on AWS with EKS
 This is an example of running the application on AWS using EKS. To run the application on AWS, follow the steps below:
 
-![Running](src/main/resources/documentation/video/running-application.gif)
+![Running](src/main/resources/documentation/video/executando-aplicacao.gif)
