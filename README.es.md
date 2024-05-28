@@ -60,7 +60,7 @@ Antes de comenzar, necesitarás tener instaladas las siguientes herramientas en 
 
 ```bash
 # Clona este repositorio
-$ git clone https://github.com/proinsighttech/snack-shop-delivery.git
+$ git clone https://github.com/joseppamancio/snack-shop-api.git
 
 # Accede al directorio del proyecto en la terminal/cmd
 $ cd snack-shop-delivery
